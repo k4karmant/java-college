@@ -1,0 +1,796 @@
+Enrolment Number: 202202626010019
+Name: Karmant Khimasia
+Semester : 3
+Section: A
+
+Q1)
+import java.util.Scanner;
+
+public class gcd
+{
+    public static void main(String[] args)
+    {
+        int a,b;
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Enter number 1:");
+        a=sc.nextInt();
+
+        System.out.println("Enter number 2:");
+        b=sc.nextInt();
+        sc.close();
+
+        int gcd=1, i;
+
+        for (i=1;(i<=a) && (i<=b);i++)
+        {
+            if(a%i==0 && b%i==0)
+            {
+                gcd=i;
+            }
+        }
+
+        System.out.println("GCD of " + a + " and " + b + ":" + gcd);
+
+        
+    }
+}
+
+Output:
+Enter number 1:
+15
+Enter number 2:
+95
+GCD of 15 and 95:5
+
+Q2)
+import java.util.Scanner;
+public class minmax 
+{
+    public static void main(String[] args)
+    {
+        int a[] = new int [10];
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Enter 10 number:");
+        for(int i = 0; i<10; i++)
+        {
+            System.out.println("Number " + (i+1) + ": ");
+            a[i]=sc.nextInt();
+        }
+
+        sc.close();
+        int min=a[0], max=a[9];
+        for(int i = 0; i<10; i++)
+        {
+            if(a[i]<min)
+            {
+                min=a[i];
+            }
+
+            if(a[i]>max)
+            {
+                max=a[i];
+            }
+        }
+
+        System.out.println("Greatest Number: " + max);
+        System.out.println("Smallest Number: " + min);
+    }    
+}
+
+Output:
+Enter 10 number:
+Number 1: 
+5
+Number 2: 
+6
+Number 3: 
+4
+Number 4: 
+98
+Number 5: 
+8
+Number 6: 
+32
+Number 7: 
+15
+Number 8:
+65
+Number 9:
+84
+Number 10:
+9
+Greatest Number: 98
+Smallest Number: 4
+
+Q3)
+import java.util.Random;
+
+public class MatrixGen {
+    public static void main(String[] args) {
+        int[][] matrix = generateMatrix(6, 6);
+        displayMatrix(matrix);
+
+        System.out.println("\nRows with an odd number of 1's:");
+        displayRowsWithOddOnes(matrix);
+
+        System.out.println("\nColumns with an odd number of 1's:");
+        displayColumnsWithOddOnes(matrix);
+    }
+
+    public static int[][] generateMatrix(int rows, int columns) {
+        int[][] matrix = new int[rows][columns];
+        Random random = new Random();
+
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < columns; j++) {
+                matrix[i][j] = random.nextInt(2); // Generates either 0 or 1
+            }
+        }
+
+        return matrix;
+    }
+
+    public static void displayMatrix(int[][] matrix) {
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[i].length; j++) {
+                System.out.print(matrix[i][j] + " ");
+            }
+            System.out.println();
+        }
+    }
+
+    public static void displayRowsWithOddOnes(int[][] matrix) {
+        for (int i = 0; i < matrix.length; i++) {
+            int countOnes = 0;
+            for (int j = 0; j < matrix[i].length; j++) {
+                if (matrix[i][j] == 1) {
+                    countOnes++;
+                }
+            }
+
+            if (countOnes % 2 != 0) {
+                displayRow(matrix, i);
+            }
+        }
+    }
+
+    public static void displayColumnsWithOddOnes(int[][] matrix) {
+        for (int j = 0; j < matrix[0].length; j++) {
+            int countOnes = 0;
+            for (int i = 0; i < matrix.length; i++) {
+                if (matrix[i][j] == 1) {
+                    countOnes++;
+                }
+            }
+
+            if (countOnes % 2 != 0) {
+                displayColumn(matrix, j);
+            }
+        }
+    }
+
+    public static void displayRow(int[][] matrix, int row) {
+        for (int j = 0; j < matrix[row].length; j++) {
+            System.out.print(matrix[row][j] + " ");
+        }
+        System.out.println();
+    }
+
+    public static void displayColumn(int[][] matrix, int column) {
+        for (int i = 0; i < matrix.length; i++) {
+            System.out.println(matrix[i][column]);
+        }
+        System.out.println();
+    }
+}
+
+Output:
+1 0 0 1 0 0 
+1 0 0 1 1 0 
+1 0 1 0 1 1 
+0 0 0 1 0 0 
+0 1 1 1 1 1 
+0 0 1 0 0 0 
+
+Rows with an odd number of 1's:
+1 0 0 1 1 0 
+0 0 0 1 0 0 
+0 1 1 1 1 1 
+0 0 1 0 0 0 
+
+Columns with an odd number of 1's:
+1
+1
+1
+0
+0
+0
+
+0
+0
+0
+0
+1
+0
+
+0
+0
+1
+0
+1
+1
+
+0
+1
+1
+0
+1
+0
+
+Q4)
+import java.util.Scanner;
+
+public class WordCounter 
+{
+    public static void main(String[] args) 
+    {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter a string: ");
+        String inputString = scanner.nextLine();
+        scanner.close();
+
+        int wordCount = countWords(inputString);
+        System.out.println("Number of words in the string: " + wordCount);
+    }
+
+    public static int countWords(String str) 
+    {
+        if (str == null || str.trim().isEmpty()) 
+        {
+            return 0;
+        }
+
+        String[] words = str.trim().split("\\s+");
+
+        return words.length;
+    }
+}
+
+Output:
+Enter a string: Hello, my name is Karmant
+Number of words in the string: 5
+
+Q5)
+import java.util.*;
+
+class CharOcc
+{
+    String s;
+    int vowel=0, cons = 0, sps = 0;
+    Scanner sc = new Scanner(System.in);
+    public void getData()
+    {
+        System.out.print("Enter a string : ");
+        s= sc.nextLine();
+    }
+
+    public void display() 
+    {
+        System.out.println("Your entered string is : " + s);
+        count_occurence();
+    }
+
+    void count_occurence()
+    {
+        int len = s.length();
+        int ctr[] = new int[256];
+        for(int i=0;i<len;i++){
+            ctr[(int) s.charAt(i)]++;
+        }
+
+        for(int i=0; i<256; i++){
+            if(ctr[i] != 0){
+                System.out.println((char)i+" : "+ctr[i]+" times");
+            }
+        }
+    }
+
+    public static void main(String args[])
+    {
+       CharOcc obj = new CharOcc();
+        obj.getData();
+        obj.display();
+    }
+}
+
+Output:
+Enter a string : Hello, my name is Karmant Khimasia
+Your entered string is : Hello, my name is Karmant Khimasia
+  : 5 times
+, : 1 times
+H : 1 times
+K : 2 times
+a : 5 times
+e : 2 times
+h : 1 times
+i : 3 times
+l : 2 times
+m : 4 times
+n : 2 times
+o : 1 times
+r : 1 times
+s : 2 times
+t : 1 times
+y : 1 times
+
+Q6)
+import java.util.Scanner;
+
+public class Palindrome {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter a number: ");
+        int number = scanner.nextInt();
+        scanner.close();
+
+        boolean isPalindrome = isNumberPalindrome(number);
+        if (isPalindrome) {
+            System.out.println(number + " is a Palindrome number.");
+        } else {
+            System.out.println(number + " is not a Palindrome number.");
+        }
+    }
+
+    public static boolean isNumberPalindrome(int number) {
+        int originalNumber = number;
+        int reversedNumber = 0;
+
+        while (number > 0) {
+            int digit = number % 10;
+            reversedNumber = reversedNumber * 10 + digit;
+            number /= 10;
+        }
+
+        return originalNumber == reversedNumber;
+    }
+}
+
+Output:
+Enter a number: 123
+123 is not a Palindrome number.
+
+Enter a number: 121
+121 is a Palindrome number.
+
+Q7)
+import java.util.Scanner;
+
+public class LinearSearch {
+    public static void main(String[] args) {
+        int[] numbers = new int[15];
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Enter 15 numbers:");
+
+        for (int i = 0; i < 15; i++) {
+            System.out.print("Number " + (i + 1) + ": ");
+            numbers[i] = scanner.nextInt();
+        }
+
+        System.out.print("Enter the key value to search: ");
+        int key = scanner.nextInt();
+        scanner.close();
+
+        int index = linearSearch(numbers, key);
+
+        if (index != -1) {
+            System.out.println("The key value " + key + " is found at index " + index + ".");
+        } else {
+            System.out.println("The key value " + key + " is not found in the array.");
+        }
+    }
+
+    public static int linearSearch(int[] arr, int key) {
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] == key) {
+                return i;
+            }
+        }
+        return -1; 
+    }
+}
+
+Output:
+Enter 15 numbers:
+Number 1: 15
+Number 2: 94
+Number 3: 56
+Number 4: 23
+Number 5: 25
+Number 6: 48
+Number 7: 75
+Number 8: 95
+Number 9: 16
+Number 10: 25
+Number 11: 4
+Number 12: 74
+Number 13: 14
+Number 14: 24
+Number 15: 61
+Enter the key value to search: 16
+The key value 16 is found at index 8.
+
+Q8)
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class BinarySearch {
+    public static void main(String[] args) {
+        int[] numbers = new int[15];
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Enter 15 sorted numbers:");
+
+        for (int i = 0; i < 15; i++) {
+            System.out.print("Number " + (i + 1) + ": ");
+            numbers[i] = scanner.nextInt();
+        }
+
+        
+        Arrays.sort(numbers);
+
+        System.out.print("Enter the key value to search: ");
+        int key = scanner.nextInt();
+        scanner.close();
+
+        int index = binarySearch(numbers, key);
+
+        if (index != -1) {
+            System.out.println("The key value " + key + " is found at index " + index + ".");
+        } else {
+            System.out.println("The key value " + key + " is not found in the array.");
+        }
+    }
+
+    public static int binarySearch(int[] arr, int key) {
+        int left = 0;
+        int right = arr.length - 1;
+
+        while (left <= right) {
+            int mid = left + (right - left) / 2;
+
+            if (arr[mid] == key) {
+                return mid;
+            } else if (arr[mid] < key) {
+                left = mid + 1;
+            } else {
+                right = mid - 1;
+            }
+        }
+
+        return -1; 
+    }
+}
+
+Output:
+Enter 15 sorted numbers:
+Number 1: 1
+Number 2: 2
+Number 3: 3
+Number 4: 4
+Number 5: 5
+Number 6: 6
+Number 7: 7
+Number 8: 8
+Number 9: 9
+Number 10: 10
+Number 11: 11
+Number 12: 12
+Number 13: 13
+Number 14: 14
+Number 15: 15
+Enter the key value to search: 8
+The key value 8 is found at index 7.
+
+Q8)
+import java.util.Scanner;
+
+public class MatrixMinMaxSum {
+    public static void main(String[] args) {
+        int[][] matrix = new int[5][5];
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Enter the values of the 5x5 matrix:");
+
+        for (int i = 0; i < 5; i++) {
+            for (int j = 0; j < 5; j++) {
+                System.out.print("Element at row " + (i + 1) + ", column " + (j + 1) + ": ");
+                matrix[i][j] = scanner.nextInt();
+            }
+        }
+
+        scanner.close();
+
+        int min = findMin(matrix);
+        int max = findMax(matrix);
+
+        int sumMinMax = min + max;
+
+        System.out.println("\nSmallest element in the matrix: " + min);
+        System.out.println("Largest element in the matrix: " + max);
+        System.out.println("Sum of smallest and largest elements: " + sumMinMax);
+    }
+
+    public static int findMin(int[][] matrix) {
+        int min = matrix[0][0];
+        for (int i = 0; i < 5; i++) {
+            for (int j = 0; j < 5; j++) {
+                if (matrix[i][j] < min) {
+                    min = matrix[i][j];
+                }
+            }
+        }
+        return min;
+    }
+
+    public static int findMax(int[][] matrix) {
+        int max = matrix[0][0];
+        for (int i = 0; i < 5; i++) {
+            for (int j = 0; j < 5; j++) {
+                if (matrix[i][j] > max) {
+                    max = matrix[i][j];
+                }
+            }
+        }
+        return max;
+    }
+}
+
+Output:
+Enter the values of the 5x5 matrix:
+Element at row 1, column 1: 1
+Element at row 1, column 2: 2
+Element at row 1, column 3: 3
+Element at row 1, column 4: 4
+Element at row 1, column 5: 5
+Element at row 2, column 1: 6
+Element at row 2, column 2: 7
+Element at row 2, column 3: 8
+Element at row 2, column 4: 9
+Element at row 2, column 5: 10
+Element at row 3, column 1: 11
+Element at row 3, column 2: 12
+Element at row 3, column 3: 13
+Element at row 3, column 4: 14
+Element at row 3, column 5: 15
+Element at row 4, column 1: 16
+Element at row 4, column 2: 17
+Element at row 4, column 3: 18
+Element at row 4, column 4: 19
+Element at row 4, column 5: 20
+Element at row 5, column 1: 21
+Element at row 5, column 2: 22
+Element at row 5, column 3: 23
+Element at row 5, column 4: 24
+Element at row 5, column 5: 25
+
+Smallest element in the matrix: 1
+Largest element in the matrix: 25
+Sum of smallest and largest elements: 26
+
+Q10)
+import java.util.Scanner;
+
+public class NumberSorting {
+    public static void main(String[] args) {
+        int[] numbers = new int[15];
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Enter 15 numbers:");
+
+        for (int i = 0; i < 15; i++) {
+            System.out.print("Number " + (i + 1) + ": ");
+            numbers[i] = scanner.nextInt();
+        }
+        scanner.close();
+        // Sort the array using bubble sort
+        bubbleSort(numbers);
+
+        System.out.println("\nSorted numbers:");
+        for (int number : numbers) {
+            System.out.print(number + " ");
+        }
+    }
+
+    public static void bubbleSort(int[] arr) {
+        int n = arr.length;
+
+        for (int i = 0; i < n - 1; i++) {
+            // Initially assume that the array is already sorted
+            boolean sorted = true;
+
+            for (int j = 0; j < n - i - 1; j++) {
+                if (arr[j] > arr[j + 1]) {
+                    // Swap elements at positions j and j+1
+                    int temp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = temp;
+                    sorted = false; // Set the sorted flag to false since a swap occurred
+                }
+            }
+
+            // If the sorted flag remains true, the array is already sorted, and we can break the loop
+            if (sorted) {
+                break;
+            }
+        }
+    }
+}
+
+Output:
+Enter 15 numbers:
+Number 1: 15
+Number 2: 26 
+Number 3: 34
+Number 4: 92
+Number 5: 61
+Number 6: 54
+Number 7: 84
+Number 8: 57
+Number 9: 75
+Number 10: 65
+Number 11: 32
+Number 12: 29
+Number 13: 92
+Number 14: 49
+Number 15: 88
+
+Sorted numbers:
+15 26 29 32 34 49 54 57 61 65 75 84 88 92 92
+
+Q11)
+import java.util.Scanner;
+
+public class CharacterCount {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter a string: ");
+        String inputString = scanner.nextLine();
+        scanner.close();
+
+        int vowelCount = 0;
+        int consonantCount = 0;
+        int specialSymbolCount = 0;
+
+        // Convert the input string to lowercase to simplify the vowel checking
+        inputString = inputString.toLowerCase();
+
+        for (int i = 0; i < inputString.length(); i++) {
+            char ch = inputString.charAt(i);
+
+            // Check if the character is a vowel
+            if (isVowel(ch)) {
+                vowelCount++;
+            } else if (Character.isLetter(ch)) {
+                // Check if the character is a consonant (excluding vowels)
+                consonantCount++;
+            } else {
+                // Count special symbols, excluding spaces and digits
+                specialSymbolCount++;
+            }
+        }
+
+        System.out.println("Number of vowels: " + vowelCount);
+        System.out.println("Number of consonants: " + consonantCount);
+        System.out.println("Number of special symbols: " + specialSymbolCount);
+    }
+
+    public static boolean isVowel(char ch) {
+        return ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u';
+    }
+}
+
+Output:
+Enter a string: Hello! What is your name?
+Number of vowels: 8
+Number of consonants: 11
+Number of special symbols: 6
+
+Q12)
+import java.util.Scanner;
+
+public class MatrixMultiplication {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter the number of rows for matrix A: ");
+        int rowsA = scanner.nextInt();
+        System.out.print("Enter the number of columns for matrix A: ");
+        int columnsA = scanner.nextInt();
+
+        System.out.print("Enter the number of rows for matrix B: ");
+        int rowsB = scanner.nextInt();
+        System.out.print("Enter the number of columns for matrix B: ");
+        int columnsB = scanner.nextInt();
+
+        if (columnsA != rowsB) {
+            System.out.println("Matrix multiplication not possible. Number of columns of matrix A must be equal to the number of rows of matrix B.");
+            scanner.close();
+        }
+
+        int[][] matrixA = new int[rowsA][columnsA];
+        int[][] matrixB = new int[rowsB][columnsB];
+
+        System.out.println("Enter the elements of matrix A:");
+        for (int i = 0; i < rowsA; i++) {
+            for (int j = 0; j < columnsA; j++) {
+                System.out.print("Element at row " + (i + 1) + ", column " + (j + 1) + ": ");
+                matrixA[i][j] = scanner.nextInt();
+            }
+        }
+
+        System.out.println("Enter the elements of matrix B:");
+        for (int i = 0; i < rowsB; i++) {
+            for (int j = 0; j < columnsB; j++) {
+                System.out.print("Element at row " + (i + 1) + ", column " + (j + 1) + ": ");
+                matrixB[i][j] = scanner.nextInt();
+            }
+        }
+
+        scanner.close();
+
+        int[][] resultMatrix = multiplyMatrices(matrixA, matrixB);
+
+        System.out.println("\nResult of matrix multiplication:");
+        displayMatrix(resultMatrix);
+    }
+
+    public static int[][] multiplyMatrices(int[][] matrixA, int[][] matrixB) {
+        int rowsA = matrixA.length;
+        int columnsA = matrixA[0].length;
+        int columnsB = matrixB[0].length;
+
+        int[][] resultMatrix = new int[rowsA][columnsB];
+
+        for (int i = 0; i < rowsA; i++) {
+            for (int j = 0; j < columnsB; j++) {
+                for (int k = 0; k < columnsA; k++) {
+                    resultMatrix[i][j] += matrixA[i][k] * matrixB[k][j];
+                }
+            }
+        }
+
+        return resultMatrix;
+    }
+
+    public static void displayMatrix(int[][] matrix) {
+        for (int[] row : matrix) {
+            for (int element : row) {
+                System.out.print(element + " ");
+            }
+            System.out.println();
+        }
+    }
+}
+
+Output:
+Enter the number of rows for matrix A: 2
+Enter the number of columns for matrix A: 2
+Enter the number of rows for matrix B: 2
+Enter the number of columns for matrix B: 2
+Enter the elements of matrix A:
+Element at row 1, column 1: 1
+Element at row 1, column 2: 2
+Element at row 2, column 1: 3
+Element at row 2, column 2: 4
+Enter the elements of matrix B:
+Element at row 1, column 1: 1
+Element at row 1, column 2: 2
+Element at row 2, column 1: 3
+Element at row 2, column 2: 4
+
+Result of matrix multiplication:
+7 10
+15 22

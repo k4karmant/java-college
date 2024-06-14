@@ -1,0 +1,1061 @@
+Enrolment Number: 202202626010019
+Name: Karmant Khimasia
+Semester : 3
+Section: A
+
+Q1)
+import java.util.*;
+
+public class SquareCube
+{
+    public static void main(String[] args)
+    {
+        int num;
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Enter number:");
+        num = sc.nextInt();
+
+        sc.close();
+
+        System.out.println("Square: " + num*num);
+        System.out.println("Cube: " + num*num*num);
+    }
+
+}
+
+Output:
+Enter number:
+5
+Square: 25
+Cube: 125
+
+Q2)
+import java.util.*;
+public class SimInt {
+    public static void main(String[] args)
+    {
+        double p,r,t,si;
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Enter principal amount:");
+        p=sc.nextDouble();
+
+        System.out.println("Enter rate of interest:");
+        r=sc.nextDouble();  
+
+        System.out.println("Enter time in years:");
+        t=sc.nextDouble();
+
+        si=(p*r*t)/100.00;
+
+        System.out.println("The Simple Interest Is:" + si);
+
+        sc.close();
+    }
+}
+
+Output:
+Enter principal amount:
+25000
+Enter rate of interest:
+5
+Enter time in years:
+10
+The Simple Interest Is:12500.0
+
+Q3)
+import java.util.*;
+public class Calc {
+    public static void main(String[]  args)
+    {
+        int a=0;
+        int b=0;
+        int choice;
+        Scanner sc = new Scanner(System.in);
+
+        while(true)
+        {
+            System.out.println("Choose an arithmetic operation from below:");
+            System.out.println("1.Addition");
+            System.out.println("2.Subtract");
+            System.out.println("3.Multiply");
+            System.out.println("4.Division");
+            System.out.println("5.Exit");
+            System.out.println("Enter operation number:");
+            choice=sc.nextInt();
+            
+            if(choice!=5)
+            {
+                System.out.println("Enter number 1:");
+                a=sc.nextInt();
+                
+                System.out.println("Enter number 2:");
+                b=sc.nextInt();
+            }
+
+            switch(choice)
+            {
+                case 1:
+                    System.out.println("Answer: " + (a+b));
+                    break;
+
+                case 2:
+                    System.out.println("Answer: " + (a-b));
+                    break;
+
+                case 3:
+                    System.out.println("Answer: " + (a*b));
+                    break;
+
+                case 4:
+                    if(b==0)
+                    {
+                        System.out.println("Invalid operation, division by 0 not possible.");
+                        break;
+                    }
+                    System.out.println("Answer: " + ((float)a/(float)b));
+                    break;
+
+                case 5:
+                    System.out.println("Exiting the program.");
+                    sc.close();
+                    System.exit(0);
+
+                default:
+                    System.out.println("Invalid choice.");
+            }
+        }
+    }
+}
+
+Output:
+Choose an arithmetic operation from below:
+1.Addition
+2.Subtract
+3.Multiply
+4.Division
+5.Exit
+Enter operation number:
+1
+Enter number 1:
+1
+Enter number 2:
+2
+Answer: 3
+Choose an arithmetic operation from below:
+1.Addition
+2.Subtract
+3.Multiply
+4.Division
+5.Exit
+Enter operation number:
+2
+Enter number 1:
+2
+Enter number 2:
+1
+Answer: 1
+Choose an arithmetic operation from below:
+1.Addition
+2.Subtract
+3.Multiply
+4.Division
+5.Exit
+Enter operation number:
+3
+Enter number 1:
+2
+Enter number 2:
+3
+Answer: 6
+Choose an arithmetic operation from below:
+1.Addition
+2.Subtract
+3.Multiply
+4.Division
+5.Exit
+Enter operation number:
+4
+Enter number 1:
+4
+Enter number 2:
+2
+Answer: 2.0
+Choose an arithmetic operation from below:
+1.Addition
+2.Subtract
+3.Multiply
+4.Division
+5.Exit
+Enter operation number:
+4
+Enter number 1:
+4
+Enter number 2:
+0
+Invalid operation, division by 0 not possible.
+Choose an arithmetic operation from below:
+1.Addition
+2.Subtract
+3.Multiply
+4.Division
+5.Exit
+Enter operation number:
+5
+Exiting the program.
+
+Q4)
+import java.util.*;
+public class NumCheck 
+{
+    public static void main(String[] args)
+    {
+        int num;
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Enter number to check: ");
+        num=sc.nextInt();
+
+        if(num==0)
+        {
+            System.out.println("Number is Zero");
+        }
+        else if(num>0)
+        {
+            System.out.println("Number is Positive");
+        }
+        else
+        {
+            System.out.println("Number is Negative");
+        }
+
+        sc.close();
+    }    
+}
+
+Output:
+Enter number to check: 
+3
+Number is Positive
+
+Q5)
+import java.util.*;
+
+public class NumPat 
+{
+    public static void main(String[] args) 
+    {
+        int num;
+        Scanner sc = new Scanner(System.in);
+        
+        System.out.print("Enter number of rows:");
+        num=sc.nextInt();
+        
+        sc.close();
+        
+        for (int i = 1; i <= num; i++) 
+        {
+            for (int j = 1; j <= i; j++) 
+            {
+                System.out.print(j + " ");
+            }
+            System.out.print("\n");
+        }
+    }
+}
+
+Output:
+Enter number of rows:4
+1 
+1 2 
+1 2 3 
+1 2 3 4 
+
+Q6)
+import java.util.*;
+
+public class CityGuide 
+{
+    public static void main(String[] args)
+    {
+        String city;
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("M-Mumbai");
+        System.out.println("D-Delhi");
+        System.out.println("A-Ahmedabad");
+        System.out.println("C-Calcutta");
+        System.out.print("Enter your choice:");
+        city = sc.next();
+        city = city.toUpperCase();
+        System.out.println("You have chosen: ");
+        switch(city)
+        {
+            case "M":
+                System.out.print("Mumbai");
+                break;
+
+            case "D":
+                System.out.print("Delhi");
+                break;
+
+            case "A":
+                System.out.print("Ahmedabad");
+                break;
+
+            case "C":
+                System.out.print("Calcutta");
+                break;
+            
+            default:
+                System.out.println("Invalid Choice");
+        }
+
+        sc.close();
+    }    
+}
+
+Output:
+M-Mumbai
+D-Delhi
+A-Ahmedabad
+C-Calcutta
+Enter your choice:M
+You have chosen: 
+Mumbai
+
+Q7)
+import java.util.*;
+public class Fibonacci{
+    public static void printFib(int a, int b, int n)
+    {
+        if(n==0)
+        {
+            return;
+        }
+        int c=a+b;
+        System.out.println(c);
+        printFib(b,c,n-1);
+    }
+    public static void main(String[] args)
+    {
+        int a=0;
+        int b=1;
+        int n;
+        Scanner sc = new Scanner(System.in);
+        
+        System.out.print("Enter number of terms in the series : ");
+        n=sc.nextInt();
+        
+        System.out.println("Your series for "+n+" terms is :");
+        System.out.println(a);
+        System.out.println(b);
+        printFib(a,b,n-1);
+
+        sc.close();
+    }
+}
+
+Output:
+Enter number of terms in the series : 5
+Your series for 5 terms is :
+0
+1
+1
+2
+3
+5
+
+Q12)
+import java.util.*;
+public class Classroom 
+{
+    private static int Area(int l, int b)
+    {
+        return l*b;
+    }
+    
+    private static void getData()
+    {
+        int l;
+        int b;
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter length of room:");
+        l=sc.nextInt();
+        System.out.println("Enter breadth of room:");
+        b=sc.nextInt();
+        sc.close();
+        printArea(l,b);
+    }
+    
+    private static void printArea(int l, int b)
+    {
+        int area = Area(l,b);
+        System.out.println("Area of room: " + area + " square units");
+    }
+    public static void main(String[] args)
+    {
+        getData();
+    }    
+}
+
+Output:
+Enter length of room:
+5
+Enter breadth of room:
+6
+Area of room: 30 square units
+
+Q13)
+import java.util.*;
+
+public class DescSort 
+{
+    public static void main(String[] args)
+    {
+        int n;
+        Scanner sc = new Scanner(System.in);
+        
+        System.out.println("Enter size of array:");
+        n=sc.nextInt();
+        
+        int arr[] = new int[n];
+
+        System.out.println("Enter elements:");
+        for(int i=0;i<n;i++)
+        {
+            System.out.print("Position " + (i+1) + ": ");
+            arr[i]=sc.nextInt();
+        }
+
+        System.out.println("Array before sorting:");
+        for (int i=0;i<n;i++)
+        {
+            System.out.print(arr[i] + " ");
+        }
+        System.out.print("\n");
+        int temp;
+        for(int i=0;i<n;i++)
+        {
+            for(int j=0;j<n-1;j++)
+            {
+                if(arr[j]<arr[j+1])
+                {
+                    temp = arr[j];
+                    arr[j] = arr[j+1];
+                    arr[j+1] = temp;
+                }
+            }
+        }
+
+        System.out.println("Array after sorting:");
+        for (int i=0;i<n;i++)
+        {
+            System.out.print(arr[i] + " ");
+        }
+
+        sc.close();
+    }    
+}
+
+Output:
+Enter size of array:
+5
+Enter elements:
+Position 1: 1
+Position 2: 2
+Position 3: 3
+Position 4: 4
+Position 5: 5
+Array before sorting:
+1 2 3 4 5 
+Array after sorting:
+5 4 3 2 1 
+
+Q14)
+import java.util.*;
+
+public class ArrSum 
+{
+    public static void main(String[] args)
+    {
+        int n;
+        Scanner sc = new Scanner(System.in);
+        
+        System.out.println("Enter size of array:");
+        n=sc.nextInt();
+        
+        int arr[] = new int[n];
+        int sum = 0;
+        System.out.println("Enter elements:");
+        for(int i=0;i<n;i++)
+        {
+            System.out.print("Position " + (i+1) + ": ");
+            arr[i]=sc.nextInt();
+            sum+=arr[i];
+        }
+
+        System.out.print("Sum of all the elements of the array: " + sum);
+
+        sc.close();
+    }    
+}
+
+Output:
+Enter size of array:
+5
+Enter elements:
+Position 1: 1
+Position 2: 2
+Position 3: 3
+Position 4: 4
+Position 5: 5
+Sum of all the elements of the array: 15
+
+Q15)
+import java.util.*;
+
+public class ArrSearch 
+{
+    public static void main(String[] args)
+    {
+        int n;
+        Scanner sc = new Scanner(System.in);
+        
+        System.out.println("Enter size of array:");
+        n=sc.nextInt();
+        
+        int arr[] = new int[n];
+        
+        System.out.println("Enter elements:");
+        for(int i=0;i<n;i++)
+        {
+            System.out.print("Position " + (i+1) + ": ");
+            arr[i]=sc.nextInt();
+        }
+
+        int key;
+
+        System.out.println("Enter key to be searched:");
+        key = sc.nextInt();
+
+        for (int i=0;i<n;i++)
+        {
+            if(arr[i]==key)
+            {
+                System.out.println("Key found at index " + (i+1));
+            }
+        }
+
+        sc.close();
+    }    
+}
+
+Output:
+Enter size of array:
+5
+Enter elements:
+Position 1: 1
+Position 2: 2
+Position 3: 1
+Position 4: 3
+Position 5: 1
+Enter key to be searched:
+1
+Key found at index 1
+Key found at index 3
+Key found at index 5
+
+Q16)
+import java.util.*;
+
+public class MaxNum 
+{
+    public static void main(String[] args)
+    {
+        int n;
+        Scanner sc = new Scanner(System.in);
+        
+        System.out.println("Enter size of array:");
+        n=sc.nextInt();
+        
+        int arr[] = new int[n];
+        
+        System.out.println("Enter elements:");
+        for(int i=0;i<n;i++)
+        {
+            System.out.print("Position " + (i+1) + ": ");
+            arr[i]=sc.nextInt();
+        }
+
+        int max=arr[0];
+
+        for(int i=1;i<n;i++)
+        {
+            if(arr[i]>max)
+            {
+                max=arr[i];
+            }
+        }
+
+        System.out.println("Maximum element: " + max);
+
+        sc.close();
+    }    
+}
+
+Output:
+Enter size of array:
+5
+Enter elements:
+Position 1: 15
+Position 2: 64
+Position 3: 9
+Position 4: 85
+Position 5: 26
+Maximum element: 85
+
+Q17)
+import java.util.*;
+
+public class AscSort 
+{
+    public static void main(String[] args)
+    {
+        int n;
+        Scanner sc = new Scanner(System.in);
+        
+        System.out.println("Enter size of array:");
+        n=sc.nextInt();
+        
+        int arr[] = new int[n];
+
+        System.out.println("Enter elements:");
+        for(int i=0;i<n;i++)
+        {
+            System.out.print("Position " + (i+1) + ": ");
+            arr[i]=sc.nextInt();
+        }
+
+        System.out.println("Array before sorting:");
+        for (int i=0;i<n;i++)
+        {
+            System.out.print(arr[i] + " ");
+        }
+        System.out.print("\n");
+        int temp;
+        for(int i=0;i<n;i++)
+        {
+            for(int j=0;j<n-1;j++)
+            {
+                if(arr[j]>arr[j+1])
+                {
+                    temp = arr[j];
+                    arr[j] = arr[j+1];
+                    arr[j+1] = temp;
+                }
+            }
+        }
+
+        System.out.println("Array after sorting:");
+        for (int i=0;i<n;i++)
+        {
+            System.out.print(arr[i] + " ");
+        }
+
+        sc.close();
+    }    
+}
+
+Output:
+Enter size of array:
+5
+Enter elements:
+Position 1: 5
+Position 2: 4
+Position 3: 3
+Position 4: 2
+Position 5: 1
+Array before sorting:
+5 4 3 2 1 
+Array after sorting:
+1 2 3 4 5 
+
+Q18)
+import java.util.*;
+
+public class CharCount
+{
+    public static void main(String[] args)
+    {
+        String str;
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Enter string:");
+        str=sc.nextLine();
+
+        System.out.println("Length of string:" + str.length());
+
+        sc.close();
+
+    }    
+}
+
+Output:
+Enter string:
+My name is Karmant.
+Length of string:19
+
+Q19)
+import java.util.*;
+
+public class Strcpy
+{
+    public static void main(String[] args)
+    {
+        String str,str2;
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Enter string:");
+        str=sc.nextLine();
+        str2 = str;
+        
+        System.out.println("Original string:" + str);
+        System.out.println("Copied string:" + str2);
+
+        sc.close();
+
+    }    
+}
+
+
+Output:
+Enter string:
+My name is Karmant
+Original string:My name is Karmant
+Copied string:My name is Karmant
+
+Q20)
+import java.util.*;
+
+public class Strcat
+{
+    public static void main(String[] args)
+    {
+        String str1,str2,res;
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Enter string 1:");
+        str1=sc.nextLine();
+        
+        System.out.println("Enter string 2:");
+        str2=sc.nextLine();
+
+        res = str1 + " " + str2;
+        
+        System.out.println("Concated string: " + res);
+
+        sc.close();
+
+    }    
+}
+
+Output:
+Enter string 1:
+My name is
+Enter string 2:
+Karmant Khimasia
+Concated string: My name is Karmant Khimasia
+
+Q21)
+import java.util.Scanner;
+
+public class InStr 
+{
+    public static void main(String[] args) 
+    {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter a string: ");
+        String str = sc.nextLine();
+
+        System.out.print("Enter the character you want to find: ");
+        char ch = sc.next().charAt(0);
+
+        int[] positions = findAllCharacterPositions(str, ch);
+
+        if (positions.length > 0) 
+        {
+            System.out.print("The character '" + ch + "' is found at positions: ");
+            for (int position : positions) {
+                System.out.print(position + " ");
+            }
+        } 
+        else 
+        {
+            System.out.println("The character '" + ch + "' was not found in the string.");
+        }
+
+        sc.close();
+    }
+
+    public static int[] findAllCharacterPositions(String str, char ch) {
+        int count = 0;
+        for (int i = 0; i < str.length(); i++) {
+            if (str.charAt(i) == ch) {
+                count++;
+            }
+        }
+
+        int[] positions = new int[count];
+        int index = 0;
+
+        for (int i = 0; i < str.length(); i++) 
+        {
+            if (str.charAt(i) == ch) 
+            {
+                positions[index] = i + 1;
+                index++;
+            }
+        }
+
+        return positions;
+    }
+}
+
+Output:
+Enter a string: My name is Karmant Khimasia
+Enter the character you want to find: a
+The character 'a' is found at positions: 5 13 16 24 27
+
+Q22)
+import java.util.*;
+
+public class Strcmp
+{
+    public static void main(String[] args)
+    {
+        String str1,str2;
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Enter string 1:");
+        str1=sc.nextLine();
+        
+        System.out.println("Enter string 2:");
+        str2=sc.nextLine();
+
+        if(str1.equals(str2))
+        {
+            System.out.println("Strings are equal");
+        }
+        else
+        {
+            System.out.println("Strings are not equal");
+        }
+        sc.close();
+
+    }    
+}
+
+Output:
+Enter string 1:
+Karmant Khimasia
+Enter string 2:
+Karmant Khimasia
+Strings are equal
+
+Enter string 1:
+Hi
+Enter string 2:
+Hey
+Strings are not equal
+
+Q23)
+import java.util.Scanner;
+
+public class Word {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter a word: ");
+        String word = sc.nextLine();
+
+        displayWordStats(word);
+
+        sc.close();
+    }
+
+    public static void displayWordStats(String word) {
+        int total = word.length();
+        int vowel = 0;
+
+        for (char c : word.toLowerCase().toCharArray()) {
+            if (c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u') {
+                vowel++;
+            }
+        }
+
+        System.out.println("Word: " + word);
+        System.out.println("Total number of characters: " + total);
+        System.out.println("Number of vowels: " + vowel);
+    }
+}
+
+Output:
+import java.util.Scanner;
+
+public class Word {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter a word: ");
+        String word = sc.nextLine();
+
+        displayWordStats(word);
+
+        sc.close();
+    }
+
+    public static void displayWordStats(String word) {
+        int total = word.length();
+        int vowel = 0;
+
+        for (char c : word.toLowerCase().toCharArray()) {
+            if (c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u') {
+                vowel++;
+            }
+        }
+
+        System.out.println("Word: " + word);
+        System.out.println("Total number of characters: " + total);
+        System.out.println("Number of vowels: " + vowel);
+    }
+}
+
+Q24)
+public class StringMethods 
+{
+    public static void main(String[] args) 
+    {
+        // Creating a sample string
+        String sampleString = "Hello, World! This is a demonstration of String methods.";
+
+        // Using various String methods
+
+        // Gets the length of the string
+        int length = sampleString.length();
+        System.out.println("Length of the string: " + length);
+
+        // Retrieves the character at the specified index
+        char charAtIndex = sampleString.charAt(7);
+        System.out.println("Character at index 7: " + charAtIndex);
+
+        // Retrieves a substring within the specified range
+        String substring = sampleString.substring(13, 19);
+        System.out.println("Substring from index 13 to 19: " + substring);
+
+        // Checks if the string starts with a specified prefix
+        boolean startsWithHello = sampleString.startsWith("Hello");
+        System.out.println("Starts with 'Hello': " + startsWithHello);
+
+        // Checks if the string ends with a specified suffix
+        boolean endsWithMethods = sampleString.endsWith("methods.");
+        System.out.println("Ends with 'methods.': " + endsWithMethods);
+
+        // Finds the index of the first occurrence of a specified substring
+        int indexOfWorld = sampleString.indexOf("World");
+        System.out.println("Index of 'World': " + indexOfWorld);
+
+        // Finds the index of the last occurrence of a specified character
+        int lastIndexOfSpace = sampleString.lastIndexOf(' ');
+        System.out.println("Last index of space: " + lastIndexOfSpace);
+
+        // Converts the string to uppercase
+        String upperCase = sampleString.toUpperCase();
+        System.out.println("Uppercase string: " + upperCase);
+
+        // Converts the string to lowercase
+        String lowerCase = sampleString.toLowerCase();
+        System.out.println("Lowercase string: " + lowerCase);
+
+        // Checks if the string contains a specified substring
+        boolean containsDemo = sampleString.contains("Demo");
+        System.out.println("Contains 'Demo': " + containsDemo);
+
+        // Replaces occurrences of a specified substring with another substring
+        String replacedString = sampleString.replace("This", "That");
+        System.out.println("After replacement: " + replacedString);
+
+        // Removes leading and trailing whitespace
+        String trimmedString = sampleString.trim();
+        System.out.println("Trimmed string: " + trimmedString);
+
+        // Splits the string into an array of substrings based on a delimiter
+        String[] words = sampleString.split(" ");
+        System.out.println("Split words:");
+        for (String word : words) {
+            System.out.println("- " + word);
+        }
+    }
+}
+
+Output:
+Length of the string: 56
+Character at index 7: W
+Substring from index 13 to 19:  This 
+Starts with 'Hello': true
+Ends with 'methods.': true
+Index of 'World': 7
+Last index of space: 47
+Uppercase string: HELLO, WORLD! THIS IS A DEMONSTRATION OF STRING METHODS.
+Lowercase string: hello, world! this is a demonstration of string methods.
+Contains 'Demo': false
+After replacement: Hello, World! That is a demonstration of String methods.
+Trimmed string: Hello, World! This is a demonstration of String methods.
+Split words:
+- Hello,
+- World!
+- This
+- is
+- a
+- demonstration
+- of
+- String
+- methods.
+
+Q25)
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class StrSort 
+{
+    public static void main(String[] args) 
+    {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter a string: ");
+        String inputString = sc.nextLine();
+
+        String sortedString = sortString(inputString);
+
+        System.out.println("Original string: " + inputString);
+        System.out.println("Sorted string: " + sortedString);
+
+        sc.close();
+    }
+
+    public static String sortString(String str) 
+    {
+        char[] charArray = str.toCharArray();
+        Arrays.sort(charArray);
+        return new String(charArray);
+    }
+}
+
+Output:
+Enter a string: Hey hello
+Original string: Hey hello
+Sorted string:  Heehlloy
+
